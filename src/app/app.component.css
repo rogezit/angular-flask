@@ -1,0 +1,83 @@
+/* Estilos generales del navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Estilos para los logos */
+.logo img {
+  height: 40px; /* Ajusta el tamaño de los logos */
+  max-width: 100px;
+  object-fit: contain;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Espacio entre los enlaces */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: bold; /* Texto en negrita */
+  transition: color 0.3s ease; /* Animación suave al cambiar el color */
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* Estilo para el subrayado verde solo cuando el enlace está activo */
+.nav-links li a.active {
+  color: #0078d4; /* Azul Cisco para el enlace activo */
+  border-bottom: 2px solid green; /* Subrayado verde */
+  font-weight: bold; /* Negrita para el enlace activo */
+}
+
+/* Subrayado verde solo debajo del texto */
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green; /* Subrayado verde */
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Estilos al pasar el ratón sobre los enlaces */
+.nav-links li a:hover {
+  color: #0078d4; /* Cambia a azul Cisco cuando pasas el ratón */
+}
+
+/* Transición para el subrayado */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  transform: scaleX(1); /* Subrayado aparece al hacer hover o cuando está activo */
+}

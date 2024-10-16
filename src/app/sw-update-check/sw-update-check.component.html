@@ -1,0 +1,20 @@
+<div class="filters-grid">
+  <div class="title">Filters:</div>
+  <div class="form-container">
+    <div class="form-field">
+      <label for="city">Select a City</label>
+      <p-dropdown [options]="cities" [(ngModel)]="selectedCityControl.value"></p-dropdown>
+    </div>
+
+    <div class="form-field">
+      <label for="date">Select a Date and Time</label>
+      <p-calendar [(ngModel)]="selectedDate" dateFormat="dd/mm/yy" [showTime]="true" hourFormat="24"></p-calendar>
+    </div>
+
+    <div class="form-field">
+      <p-button label="Submit" class="blue-button" (click)="submitFilters()"></p-button>
+    </div>
+  </div>
+</div>
+
+

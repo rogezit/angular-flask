@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/sw-update-check">
+      <img src="cisco-vector.svg" alt="Cisco Logo">
+    </a>
+  </div>
+  <ul class="nav-links">
+    <!-- <li><a routerLink="/sw-update-check" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">SW Update Check</a></li> -->
+    <li><a routerLink="http://127.0.0.1:5000/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">SW Update Check</a></li>
+    <li><a routerLink="/report-apdfs" routerLinkActive="active">Report APDFS</a></li>
+    <li><a routerLink="/reports-wlc" routerLinkActive="active">Reports WLC</a></li>
+    <!-- <li><a routerLink="/home" routerLinkActive="active">Settings</a></li> -->
+    <!-- Cambiar routerLink a href para la redirección externa -->
+    <li><a href="http://127.0.0.1:5000/settings" routerLinkActive="active">Settings</a></li>
+
+  </ul>
+  <div class="logo">
+    <a routerLink="/sw-update-check">
+      <img src="toyota-vector.svg" alt="Toyota Logo">
+    </a>
+  </div>
+</nav>
+<router-outlet></router-outlet>

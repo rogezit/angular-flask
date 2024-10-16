@@ -1,0 +1,103 @@
+
+
+<!-- Nuevo div para "Generate Reports" -->
+<div class="reports-grid">
+  <div class="title">Generate WLC Reports:</div>
+  <div class="form-container">
+    <!-- Dropdown para Servers -->
+    <div class="form-field">
+      <label for="servers">Servers:</label>
+      <p-dropdown [options]="servers" [(ngModel)]="selectedServer.value"
+                  [ngClass]="{'invalid-dropdown': !selectedServer.value && isSubmitted}">
+      </p-dropdown>
+      <!-- Mensaje de error para el servidor -->
+      <div *ngIf="!selectedServer.value && isSubmitted" class="error-message">*This field is required</div>
+    </div>
+
+    <!-- Botón de Submit -->
+    <div class="form-field">
+      <p-button label="Submit" class="blue-button" (click)="submitGenerateReports()"></p-button>
+    </div>
+
+    <div class="form-field">
+      <p-overlayPanel #exportMenu>
+        <ul class="export-options">
+          <li (click)="exportCSV(selectedReportForExport.name + '.csv')">
+            <i class="pi pi-file"></i> Export CSV
+          </li>
+          <li (click)="exportPDF(selectedReportForExport.name + '.pdf')">
+            <i class="pi pi-file-pdf"></i> Export PDF
+          </li>
+        </ul>
+      </p-overlayPanel>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="frozen-columns-container">
+  <p-table [value]="reports" scrollable="true" scrollHeight="450px" dataKey="id" styleClass="p-datatable-gridlines"
+           [expandedRowKeys]="expandedRows"
+           (onRowExpand)="onRowExpand($event)" (onRowCollapse)="onRowCollapse($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Report Name</th>
+        <th>Server</th>
+        <th>Date</th>
+        <th>Options</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-report>
+      <tr>
+        <td>{{ report.name }}</td>
+        <td>{{ report.server }}</td>
+        <td>{{ report.date }}</td>
+        <td>
+          <button pButton type="button" icon="pi pi-file" label="View" class="table-button"
+                  (click)="toggleRow(report)"></button>
+          <!-- Actualización aquí -->
+          <p-button label="Export" icon="pi pi-external-link"
+                    (click)="setReportForExport(report, exportMenu, $event)"
+                    styleClass="table-button"></p-button>
+        </td>
+
+      </tr>
+    </ng-template>
+
+
+    <!-- Row Expansion Template -->
+    <ng-template pTemplate="rowexpansion" let-report>
+      <tr>
+        <td colspan="5">
+          <div class="expanded-row-content">
+            <h5>Details for {{ report.name }}</h5>
+
+            <!-- Tabla estilizada vinculada a csvHeaders para controlar el orden de las columnas -->
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th *ngFor="let header of csvHeaders">{{ header }}</th>  <!-- Encabezados en orden correcto -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of valueData">
+                  <td *ngFor="let header of csvHeaders">{{ data[header] }}</td>  <!-- Los datos siguen el orden de los encabezados -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+
+
+
+  </p-table>
+</div>

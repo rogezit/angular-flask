@@ -1,0 +1,247 @@
+.filters-grid, .reports-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.title {
+  width: 100%;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-field {
+  flex: 1;
+  margin: 0 10px;
+}
+
+p-dropdown, p-calendar, p-button {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+}
+
+.options-button-custom {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+p-overlayPanel {
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.export-options {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.export-options li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  color: #333;
+}
+
+.export-options li:hover {
+  background-color: #f0f0f0; /* Fondo al pasar el ratón */
+}
+
+.export-options i {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #3498db; /* Ícono en color azul */
+}
+
+.export-options li:hover i {
+  color: #2980b9; /* Cambio de color de ícono al hacer hover */
+}
+
+/* Botón Export */
+.export-button {
+  background-color: #3498db; /* Color de fondo azul */
+  color: white; /* Color de texto blanco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.export-button .pi {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+/* Borde rojo cuando el dropdown no tiene valor seleccionado */
+.invalid-dropdown .p-dropdown {
+  border: 2px solid red !important;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+::ng-deep .invalid-dropdown .p-dropdown {
+  border: 2px solid red !important; /* Borde rojo alrededor del dropdown */
+}
+
+::ng-deep .p-dropdown.p-invalid .p-dropdown-label {
+  border-color: red !important; /* Asegurarse que el label interno también tenga borde rojo */
+}
+
+
+
+/* Ajuste para alinear el borde de la tabla con el filtro */
+.filters-grid, .reports-grid, .frozen-columns-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* Fondo blanco para todas las celdas excepto los títulos */
+.p-table tr, .p-table td {
+  background-color: #fff !important; /* Fondo blanco para las celdas de datos */
+}
+
+/* Fondo gris para los encabezados de la tabla */
+.p-table th {
+  background-color: #f0f0f0 !important; /* Fondo gris claro para los títulos */
+  color: #333; /* Color del texto de los títulos */
+}
+
+/* Congelación de columnas con fondo blanco */
+.p-frozen-column {
+  background-color: #fff !important; /* Fondo blanco para columnas congeladas */
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurar que la tabla ocupe todo el ancho del contenedor */
+.p-table {
+  width: 100%;
+}
+
+/* Alinear verticalmente las celdas */
+.p-table td, .p-table th {
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid #ddd; /* Bordes suaves y claros */
+}
+
+/* Estilos específicos para la columna "Options" */
+.p-table td:last-child {
+  border-left: 1px solid #ccc; /* Separación clara entre las celdas de la columna "Options" */
+}
+
+/* Botones de opciones dentro de la columna "Options" */
+.p-table td:last-child button {
+  margin-right: 5px; /* Separación entre los botones de opciones */
+}
+
+.table-button {
+  margin-right: 10px; /* Añade un margen derecho para separar los botones */
+}
+
+
+/* Estilo para el contenido de la fila expandida */
+.expanded-row-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.p-row-toggler {
+  cursor: pointer;
+}
+
+.p-table {
+  width: 100%;
+}
+
+.p-table td, .p-table th {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Espacio entre botones */
+.p-table td button, .p-table td p-button {
+  margin-right: 10px;
+}
+
+
+/* Estilos para la tabla */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.data-table thead {
+  background-color: #f2f2f2;
+}
+
+.data-table th {
+  background-color: #00BCEB;
+  color: white;
+  text-align: left;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
